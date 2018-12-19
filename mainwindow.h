@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QString>
 
 namespace Ui {
 class MainWindow;
@@ -13,10 +14,16 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    QString ip_to_send();
     ~MainWindow();
+    Ui::MainWindow *ui;
+
+private slots:
+    void on_lineEdit_returnPressed();
+
 
 private:
-    Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H

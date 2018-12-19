@@ -18,9 +18,14 @@ void SocketTest::connecting(const char* tmp_buff)
     connect(socket, SIGNAL(connected()), this, SLOT(connected()));
     connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
 
+    MainWindow ipis;
+
+    QString ip = ipis.ip_to_send();
+
     qDebug() << "Connecting,..";
 
-    socket->connectToHost("192.168.43.34", 80);
+
+    socket->connectToHost(ip , 80);
 
     if(!socket->waitForConnected(500))
     {
