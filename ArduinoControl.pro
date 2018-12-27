@@ -7,6 +7,7 @@
 QT       += core gui
 QT += network
 QT += multimedia multimediawidgets
+QT += webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,12 +30,15 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     qsocket.cpp \
-    keypress.cpp
+    keypress.cpp \
+    ts.cpp
 
 HEADERS += \
         mainwindow.h \
     qsocket.h \
-    keypress.h
+    keypress.h \
+    ts.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    ts.ui

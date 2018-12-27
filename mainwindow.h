@@ -3,13 +3,13 @@
 
 #include <QMainWindow>
 #include <QString>
+#include <QDialog>
 
 namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
@@ -20,10 +20,6 @@ public:
 
 private slots:
     void on_lineEdit_returnPressed();
-
-
-private:
-
 };
 
 #endif // MAINWINDOW_H

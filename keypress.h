@@ -5,14 +5,12 @@
 #include <QtGui>
 #include <QLabel>
 
-class KeyPress : public QWidget
-{
+class KeyPress : public QWidget {
     Q_OBJECT
 
 public:
     KeyPress(QWidget *parent = 0);
     const char* buff;
-
 
 protected:
     void keyPressEvent(QKeyEvent *event);

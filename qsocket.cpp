@@ -10,25 +10,16 @@ SocketTest::SocketTest(QObject *parent) :
 {
 }
 
-
-
-void SocketTest::connecting(const char* tmp_buff)
-{
+void SocketTest::connecting(const char* tmp_buff) {
     socket = new QTcpSocket(this);
     connect(socket, SIGNAL(connected()), this, SLOT(connected()));
     connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
 
-    MainWindow ipis;
-
-    QString ip = ipis.ip_to_send();
-
     qDebug() << "Connecting,..";
 
+    socket->connectToHost("192.168.43.34" , 80);
 
-    socket->connectToHost(ip , 80);
-
-    if(!socket->waitForConnected(500))
-    {
+    if(!socket->waitForConnected(500)) {
         qDebug() << "Error: " << socket->errorString();
     }
 
@@ -40,12 +31,10 @@ void SocketTest::command(const char* buff) {
     socket->write(buff);
 }
 
-void SocketTest::connected()
-{
+void SocketTest::connected() {
     qDebug() << "Connected!";
 }
 
-void SocketTest::disconnected()
-{
+void SocketTest::disconnected() {
     qDebug() << "Disconnected!";
 }

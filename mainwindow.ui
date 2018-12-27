@@ -14,28 +14,39 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QWebView" name="webView">
     <property name="geometry">
      <rect>
-      <x>830</x>
-      <y>540</y>
-      <width>108</width>
-      <height>25</height>
+      <x>530</x>
+      <y>20</y>
+      <width>401</width>
+      <height>281</height>
      </rect>
+    </property>
+    <property name="url">
+     <url>
+      <string>about:blank</string>
+     </url>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>570</y>
-      <width>80</width>
-      <height>25</height>
+      <x>10</x>
+      <y>490</y>
+      <width>331</width>
+      <height>111</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Push Me</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="text">
+        <string>Enter your camera's IP:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -59,6 +70,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
